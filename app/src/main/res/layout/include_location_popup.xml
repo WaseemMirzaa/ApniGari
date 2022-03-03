@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/curved_top_white"
+    android:layout_height="@dimen/_300sdp">
+
+
+    <RadioGroup
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/pricingRG"
+        android:background="@drawable/curved_top_white"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:id="@+id/iRideRB"
+            android:layout_weight="1"
+            android:background="@drawable/curved_left_button_selector"
+            android:button="@null"
+            android:fontFamily="@font/noto_regular"
+            android:gravity="center"
+            android:text="@string/go"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:id="@+id/plusRB"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/curved_center_button_selector"
+            android:button="@null"
+            android:fontFamily="@font/noto_regular"
+            android:text="@string/go_plus"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/luxRB"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/curved_right_button_selector"
+            android:button="@null"
+            android:fontFamily="@font/noto_regular"
+            android:text="@string/business"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/include_car_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        app:layout_constraintTop_toBottomOf="@+id/pricingRG" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

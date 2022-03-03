@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ApniGari</string>
+    <string name="login">Sign In</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="don_t_have_an_account_sign_up">Don’t have an account? Sign Up</string>
+    <string name="enter_your_location">Enter Your Location</string>
+    <string name="find_rider">FIND RIDER</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="continue">Continue</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="current_location">Current Location</string>
+    <string name="where_to">Where to?</string>
+    <string name="second_drop_off">Second Drop off</string>
+    <string name="go">Go</string>
+    <string name="go_plus">Go Plus</string>
+    <string name="business">Business</string>
+    <string name="hello">Hello !</string>
+    <string name="hello">Hello !</string>
+    <string name="hello">Hello !</string>
+    <string name="hello">Hello !</string>
+    <string name="golden_bridge_gate">Golden Bridge Gate</string>
+    <string name="golden_bridge_gate_edison_avenew_609_wall_street_london">Golden Bridge Gate, Edison avenew, 609 Wall Street London...</string>
+    <string name="car_image">Car Image</string>
+    <string name="dummy_amount">Rs 500</string>
+    <string name="rapid_go">Rapid Go</string>
+</resources>

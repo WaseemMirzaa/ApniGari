@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "97175965490",
+    "project_id": "apni-gari-3dc01",
+    "storage_bucket": "apni-gari-3dc01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97175965490:android:ab20d815dd928d8fc5112b",
+        "android_client_info": {
+          "package_name": "com.buzzware.apnigari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97175965490-l2d8i5jqotehrnahkurrprag7ppaptsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSW22XgtNdyjJGUq3QeXAjwBT6tFP51tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97175965490-l2d8i5jqotehrnahkurrprag7ppaptsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
