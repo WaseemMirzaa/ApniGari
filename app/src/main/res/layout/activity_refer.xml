@@ -57,6 +57,7 @@
                 android:id="@+id/imageView10"
                 android:layout_width="match_parent"
                 android:layout_marginEnd="@dimen/_30sdp"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="@dimen/_30sdp"
                 android:layout_height="@dimen/_40sdp"
                 app:layout_constraintEnd_toEndOf="parent"

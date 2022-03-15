@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:visibility="gone"
     android:layout_height="@dimen/_310sdp"
     android:padding="@dimen/_15sdp"
+    android:visibility="gone"
     android:background="@drawable/curved_gray_2x">
 
     <TextView
@@ -154,9 +154,9 @@
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/_30sdp"
-        android:scaleX="0.4"
-        android:scaleY="0.4"
+        android:layout_height="@dimen/_40sdp"
+        android:scaleX="0.35"
+        android:scaleY="0.35"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTV" />

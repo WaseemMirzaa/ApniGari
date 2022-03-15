@@ -32,6 +32,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.SelectScreen"
+            android:exported="true"/>
+
         <activity android:name=".activities.auth.Login"
             android:exported="true"/>
 
