@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_height="@dimen/_70sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/noto_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/date"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toTopOf="@+id/carDetailsTV"
+            app:layout_constraintStart_toStartOf="@+id/carDetailsTV" />
+
+        <TextView
+            android:id="@+id/amountTV"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/noto_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/rs_placeholder"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toTopOf="@+id/carDetailsTV"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/carDetailsTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_regular"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/rit_5875_honda_civic"
+            android:textColor="@color/textGray"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/timeTV"
+            android:paddingTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_regular"
+            android:maxLines="1"
+            android:text="@string/time"
+            android:textColor="@color/textGray"
+            android:textSize="@dimen/_7ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/dateTV"
+            app:layout_constraintStart_toEndOf="@+id/dateTV"
+            app:layout_constraintTop_toTopOf="@id/dateTV" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

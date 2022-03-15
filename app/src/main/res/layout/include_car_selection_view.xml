@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/carIV"
         android:layout_width="@dimen/_70sdp"
         android:layout_height="@dimen/_70sdp"
         android:layout_margin="@dimen/_10sdp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/carNameTV"
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_width="0dp"
@@ -25,13 +25,13 @@
         android:text="@string/rapid_go"
         android:fontFamily="@font/noto_bold"
         android:textSize="@dimen/_13ssp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        app:layout_constraintBottom_toBottomOf="@+id/priceTV"
+        app:layout_constraintEnd_toStartOf="@+id/priceTV"
+        app:layout_constraintStart_toEndOf="@+id/carIV"
+        app:layout_constraintTop_toTopOf="@+id/priceTV" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/priceTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/purple_700"

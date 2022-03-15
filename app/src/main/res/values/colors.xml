@@ -13,4 +13,7 @@
 
     <color name="backgroundGray">#F6F8FF</color>
     <color name="default_bg">#F6F8FF</color>
+    <color name="blue_transparent">#658D36FF</color>
+    <color name="curved_background_text_field">#F5F5F5</color>
+    <color name="light_blue">#01D1FF</color>
 </resources>

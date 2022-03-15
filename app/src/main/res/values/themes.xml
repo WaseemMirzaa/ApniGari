@@ -19,4 +19,10 @@
         <item name="android:textColor">@color/quantum_purple400</item>
         <item name="android:background">@drawable/textview_underline</item>
     </style>
+    <style name="Theme.ApniGari.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ApniGari.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.ApniGari.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

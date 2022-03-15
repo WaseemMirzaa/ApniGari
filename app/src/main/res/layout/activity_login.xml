@@ -23,13 +23,13 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_280sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/login_header" />
+                app:srcCompat="@drawable/car_with_logo" />
 
 
             <RelativeLayout
@@ -103,14 +103,14 @@
 
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/loginTV"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
-                android:background="@drawable/curved_blue"
+                android:background="@drawable/curved_purple"
                 android:fontFamily="@font/noto_bold"
                 android:gravity="center"
                 android:text="@string/log_in"

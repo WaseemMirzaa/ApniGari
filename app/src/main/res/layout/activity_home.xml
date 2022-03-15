@@ -10,19 +10,53 @@
         android:layout_height="match_parent" />
 
     <include
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:id="@+id/includeLocationPopup"
+        layout="@layout/include_select_vehicle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_300sdp"
-        layout="@layout/include_location_popup"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+
+    <include
+        android:visibility="gone"
+        layout="@layout/include_location_popup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_175sdp"
+        android:id="@+id/includeCarPopup"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <include
+        android:visibility="gone"
+        layout="@layout/include_ride_cancellation_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:id="@+id/includeCancelPopup"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <include
+        layout="@layout/include_found_driver_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_310sdp"
+        android:id="@+id/includeFindDriverPopUp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="@dimen/_40sdp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/menuIV"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:contentDescription="@string/menu"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

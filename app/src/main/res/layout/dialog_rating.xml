@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/nameTV6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/noto_black"
+        android:maxLines="1"
+        android:text="@string/rating"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp">
+
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/submitReviewTV"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/curved_purple"
+                android:fontFamily="@font/noto_bold"
+                android:gravity="center"
+                android:paddingStart="@dimen/_25sdp"
+                android:paddingEnd="@dimen/_25sdp"
+                android:text="@string/submit_review"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                app:layout_constraintWidth_percent="0.4" />
+
+            <TextView
+                android:id="@+id/timeTV5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/noto_regular"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/feedback"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameTV5" />
+
+            <TextView
+                android:id="@+id/nameTV5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/noto_bold"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/how_is_your_trip"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.481"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <TextView
+                android:id="@+id/vehicleNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/noto_regular"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_3sdp"
+                android:text="@string/honda_civic"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/_7ssp"
+                app:layout_constraintStart_toEndOf="@+id/vehicleNoTV"
+                app:layout_constraintTop_toBottomOf="@+id/currentRatingRB" />
+
+            <TextView
+                android:id="@+id/vehicleNoTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="@font/noto_bold"
+                android:gravity="top"
+                android:maxLines="1"
+                android:text="@string/ril_5875"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintStart_toStartOf="@+id/currentRatingRB"
+                app:layout_constraintTop_toBottomOf="@+id/currentRatingRB" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/picIV"
+                android:layout_width="68dp"
+                android:layout_height="71dp"
+                android:src="@drawable/pic_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                android:id="@+id/currentRatingRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/nameTV"
+                app:layout_constraintTop_toBottomOf="@+id/nameTV"
+                app:srb_borderColor="@color/golden_stars"
+                app:srb_fillColor="@color/golden_stars"
+                app:srb_numberOfStars="5"
+                app:srb_rating="3"
+                app:srb_starSize="10dp"
+                app:srb_stepSize="0.5" />
+
+            <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                android:id="@+id/ratingRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/timeTV5"
+                app:layout_constraintStart_toStartOf="@+id/timeTV5"
+                app:layout_constraintTop_toBottomOf="@+id/timeTV5"
+                app:srb_borderColor="@color/golden_stars"
+                app:srb_fillColor="@color/golden_stars"
+                app:srb_numberOfStars="5"
+                app:srb_rating="3"
+                app:srb_starSize="20dp"
+                app:srb_stepSize="0.5" />
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/noto_black"
+                android:maxLines="1"
+                android:text="@string/name_placeholder"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/picIV"
+                app:layout_constraintTop_toTopOf="@+id/picIV" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:cardBackgroundColor="@color/backgroundGray"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingRB">
+
+                <EditText
+                    android:id="@+id/commentsET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:gravity="top"
+                    android:textSize="@dimen/_9ssp"
+                    android:imeOptions="actionDone"
+                    android:hint="@string/additional_comments"
+                    android:importantForAutofill="no" />
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/picIV" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:contentDescription="@string/closeicon"
+        android:id="@+id/imageView4"
+        android:layout_width="@dimen/_30sdp"
+        android:padding="@dimen/_8sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close"
+        app:tint="@color/white" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

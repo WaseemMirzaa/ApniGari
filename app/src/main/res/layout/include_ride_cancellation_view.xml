@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:visibility="gone"
+    android:layout_height="@dimen/_200sdp"
+    android:padding="@dimen/_15sdp"
+    android:background="@drawable/curved_gray_2x"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/timeTV3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/noto_regular"
+        android:gravity="center"
+        android:maxLines="2"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:text="@string/you_will_be_charged_an_additional_rs_200_cancellation_fee_on_your_next_ride"
+        android:textColor="@color/textGray"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTV2" />
+
+    <TextView
+        android:id="@+id/nameTV2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:fontFamily="@font/noto_bold"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="@string/are_you_sure_you_want_to_cancel"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/cancelTripTV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:background="@drawable/curved_purple"
+        android:fontFamily="@font/noto_bold"
+        android:paddingStart="@dimen/_25sdp"
+        android:paddingEnd="@dimen/_25sdp"
+        android:text="@string/cancel_trip"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/timeTV3"
+        app:layout_constraintTop_toBottomOf="@+id/timeTV3"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/goBackTV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/curved_light_blue"
+        android:fontFamily="@font/noto_bold"
+        android:gravity="center"
+        android:paddingStart="@dimen/_25sdp"
+        android:paddingEnd="@dimen/_25sdp"
+        android:text="@string/go_back"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/timeTV3"
+        app:layout_constraintTop_toTopOf="@+id/cancelTripTV"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

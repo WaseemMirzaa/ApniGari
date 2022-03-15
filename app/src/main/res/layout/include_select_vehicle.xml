@@ -3,8 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_300sdp"
-    android:background="@drawable/curved_gray">
+    android:layout_height="@dimen/_300sdp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/curved_gray_custom"/>
 
     <TextView
         android:id="@+id/textView3"

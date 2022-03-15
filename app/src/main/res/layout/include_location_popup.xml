@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:background="@drawable/curved_top_white"
-    android:layout_height="@dimen/_300sdp">
+    android:layout_height="@dimen/_175sdp">
 
 
     <RadioGroup
@@ -71,11 +72,48 @@
     </RadioGroup>
 
     <include
-        android:id="@+id/include"
-        layout="@layout/include_car_view"
+        android:id="@+id/includeCarView"
+        layout="@layout/include_car_selection_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_80sdp"
         app:layout_constraintTop_toBottomOf="@+id/pricingRG" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:src="@drawable/cash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeCarView" />
+
+    <TextView
+        android:id="@+id/promoTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="@font/noto_bold"
+        android:text="Promo"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/carNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="@font/noto_bold"
+        android:text="@string/cash"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

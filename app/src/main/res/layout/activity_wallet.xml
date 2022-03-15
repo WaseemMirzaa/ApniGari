@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:background="@color/purple_500"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/includeAppBar"
+        layout="@layout/include_menu_app_bar" />
+
+    <TextView
+        android:id="@+id/amountTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount_placeholder"
+        android:textColor="@color/white"
+        android:fontFamily="@font/noto_medium"
+        android:textSize="@dimen/_25ssp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeAppBar" />
+
+    <TextView
+        android:id="@+id/amountTV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/noto_medium"
+        android:text="@string/balance"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/amountTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountTV" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/listCancelRideRV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cancelRidePlaceholder" />
+
+    <TextView
+        android:id="@+id/cancelRidePlaceholder"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/noto_medium"
+        android:text="@string/cancel_ride"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
