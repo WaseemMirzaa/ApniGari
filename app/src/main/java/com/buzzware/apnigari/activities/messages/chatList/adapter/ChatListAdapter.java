@@ -20,15 +20,21 @@ import java.util.List;
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListViewHolder> {
 
     Activity c;
-    
+
     List<ConversationModel> conversations;
 
     public ChatListAdapter(List<ConversationModel> conversations, Activity c) {
-        
+
         this.c = c;
-        
+
         this.conversations = conversations;
-        
+
+    }
+
+    public ChatListAdapter(Activity c) {
+
+        this.c = c;
+
     }
 
     @NonNull
@@ -43,15 +49,20 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ChatListViewHolder holder, int position) {
 
+        if(conversations == null) {
+            holder.binding.getRoot().setOnClickListener(view -> moveToChatScreen());
+
+            return;
+        }
         ConversationModel conversation = conversations.get(position);
-        
+
         holder.binding.nameTV.setText(conversation.getName());
 
         holder.binding.vehicleNameTV2.setText(conversation.getLastMessage());
 
         Glide.with(c).load(conversation.getImage()).apply(new RequestOptions().centerCrop())
                 .into(holder.binding.picIV3);
-        
+
         holder.binding.getRoot().setOnClickListener(view -> moveToChatScreen(conversation));
 
     }
@@ -68,12 +79,27 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListViewHolder> {
         c.startActivity(intent);
     }
 
+    private void moveToChatScreen() {
+
+        Intent intent = new Intent(c, Chat.class);
+
+//        intent.putExtra("conversationID", conversation.getConversationID());
+//        intent.putExtra("selectedUserID", conversation.toID);
+//        intent.putExtra("selectedUserName", conversation.getName());
+//        intent.putExtra("checkFrom", "false");
+
+        c.startActivity(intent);
+    }
+
     @Override
     public int getItemCount() {
 
-        return conversations.size();
+        if (conversations != null)
+            return conversations.size();
+
+        return 7;
 
     }
-    
+
 }
 

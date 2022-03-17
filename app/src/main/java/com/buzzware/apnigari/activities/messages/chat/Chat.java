@@ -41,13 +41,13 @@ public class Chat extends BaseActivity {
 
         setContentView(mBinding.getRoot());
 
-        init();
-
-        getDataFromExtra();
-
+//        init();
+//
+//        getDataFromExtra();
+//
         setListener();
-
-        setListenerOnRide();
+//
+//        setListenerOnRide();
     }
 
     private void setListenerOnRide() {

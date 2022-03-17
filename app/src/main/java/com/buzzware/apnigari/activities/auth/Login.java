@@ -38,11 +38,11 @@ public class Login extends BaseActivity {
 
     void init() {
 
-        model = new ViewModelProvider(this).get(AuthViewModel.class);
-
-        model.getAuthLiveData().observe(Login.this, this::handleAuth);
-
-        model.getForgetPasswordLiveData().observe(Login.this, this::handleForgetPassword);
+//        model = new ViewModelProvider(this).get(AuthViewModel.class);
+//
+//        model.getAuthLiveData().observe(Login.this, this::handleAuth);
+//
+//        model.getForgetPasswordLiveData().observe(Login.this, this::handleForgetPassword);
     }
 
     private void handleForgetPassword(GenericModelLiveData genericModelLiveData) {
@@ -107,7 +107,7 @@ public class Login extends BaseActivity {
 
         binding.signUpTV.setOnClickListener(view -> moveToSignUpActivity());
 
-        binding.loginTV.setOnClickListener(view -> login());
+        binding.loginTV.setOnClickListener(view -> SelectScreen.start(Login.this));
     }
 
     void showForgetPassword() {
@@ -122,7 +122,7 @@ public class Login extends BaseActivity {
                     @Override
                     public void positiveCallback(String input) {
 
-                        validateAndSendEmail(input);
+
 
                     }
 

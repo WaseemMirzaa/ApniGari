@@ -53,11 +53,11 @@ public class BaseNavDrawer extends BaseActivity implements View.OnClickListener 
 
         baseModel = new ViewModelProvider(this).get(BaseViewModel.class);
 
-        baseModel.getAuthLiveData().observe(BaseNavDrawer.this, this::handleUserResponse);
+//        baseModel.getAuthLiveData().observe(BaseNavDrawer.this, this::handleUserResponse);
 
-        baseModel.getUserModel();
+//        baseModel.getUserModel();
 
-        baseModel.getActiveRideLiveData().observe(BaseNavDrawer.this, this::handleActiveRideResponse);
+//        baseModel.getActiveRideLiveData().observe(BaseNavDrawer.this, this::handleActiveRideResponse);
 
 //        baseModel.getActiveRide();
     }

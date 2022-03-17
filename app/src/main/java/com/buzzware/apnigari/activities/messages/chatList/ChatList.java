@@ -53,9 +53,9 @@ public class ChatList extends BaseNavDrawer {
 
     private void setLiveData() {
 
-        model = new ViewModelProvider(this).get(ChatListViewModel.class);
+//        model = new ViewModelProvider(this).get(ChatListViewModel.class);
 
-        model.getChatListLiveData().observe(ChatList.this, this::handleResponse);
+//        model.getChatListLiveData().observe(ChatList.this, this::handleResponse);
     }
 
     private void handleResponse(GenericModelLiveData genericModelLiveData) {
@@ -102,7 +102,8 @@ public class ChatList extends BaseNavDrawer {
 
         super.onResume();
 
-        model.getConversationsList();
+        mBinding.listRV.setAdapter(new ChatListAdapter(ChatList.this));
+//        model.getConversationsList();
 
     }
 

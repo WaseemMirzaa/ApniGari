@@ -37,7 +37,7 @@ public class SignUp extends BaseActivity {
 
         binding.loginTV.setOnClickListener(view -> moveToLoginActivity());
         
-        binding.btnContinue.setOnClickListener(view -> signUp());
+        binding.btnContinue.setOnClickListener(view -> SelectScreen.start(SignUp.this));
 
     }
 
@@ -119,9 +119,9 @@ public class SignUp extends BaseActivity {
 
     void init() {
 
-        model = new ViewModelProvider(this).get(AuthViewModel.class);
-
-        model.getAuthLiveData().observe(SignUp.this, this::handleAuth);
+//        model = new ViewModelProvider(this).get(AuthViewModel.class);
+//
+//        model.getAuthLiveData().observe(SignUp.this, this::handleAuth);
     
     }
 

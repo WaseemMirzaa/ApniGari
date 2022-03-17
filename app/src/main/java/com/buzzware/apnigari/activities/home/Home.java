@@ -136,6 +136,8 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
         setFireBaseToken();
         
         setListeners();
+
+        setBottomSheet();
     }
 
     private void setBottomSheet() {
@@ -240,7 +242,7 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
         mBinding.menuIV.setOnClickListener(view -> openCloseDrawer());
 
-//        mBinding.includeLocationPopup.pickUpTV.setOnClickListener(view -> showSearchPlaceDialog());
+        mBinding.actionTV.setOnClickListener(view -> showCarPopUp());
 
 //        mBinding.includeLocationPopup.dropOffTV.setOnClickListener(view -> showSearchPlaceDialog());
 
@@ -268,7 +270,10 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
     private void cancelTrip() {
 
-//        mBinding.includeLocationPopup.getRoot().setVisibility(View.VISIBLE);
+        mBinding.bslContainer.setVisibility(View.VISIBLE);
+        mBinding.locationContainer.setVisibility(View.VISIBLE);
+        mBinding.logoIV.setVisibility(View.VISIBLE);
+        mBinding.actionTV.setVisibility(View.VISIBLE);
 
         mBinding.includeCancelPopup.getRoot().setVisibility(View.GONE);
 
@@ -297,8 +302,10 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
     private void showCarPopUp() {
 
-
-//        mBinding.includeLocationPopup.getRoot().setVisibility(View.GONE);
+        mBinding.logoIV.setVisibility(View.GONE);
+        mBinding.bslContainer.setVisibility(View.GONE);
+        mBinding.locationContainer.setVisibility(View.GONE);
+        mBinding.actionTV.setVisibility(View.GONE);
 
         mBinding.includeCarPopup.getRoot().setVisibility(View.VISIBLE);
 
@@ -355,7 +362,7 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
                 location.beginUpdates();
 
-                checkActiveRide();
+//                checkActiveRide();
 
             }
 
@@ -385,9 +392,9 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
     private void checkActiveRide() {
 
-        model.getActiveRideLiveData().observe(Home.this, this::activeRideResponse);
+//        model.getActiveRideLiveData().observe(Home.this, this::activeRideResponse);
 
-        model.getActiveRide();
+//        model.getActiveRide();
 
 
     }
@@ -404,7 +411,7 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
         model = new ViewModelProvider(this).get(HomeViewModel.class);
 
-        model.setFireBaseToken();
+//        model.setFireBaseToken();
 
         model.getSearchPlaceModelData().observe(Home.this, this::searchPlaceResponse);
 
@@ -442,6 +449,8 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
         }
         mMap.setMyLocationEnabled(false);
         mMap.getUiSettings().setMyLocationButtonEnabled(false);
+        mMap.getUiSettings().setZoomControlsEnabled(false);
+
     }
 
 
@@ -485,6 +494,9 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
         });
 
         mMap.setOnCameraIdleListener(() -> {
+
+            mBinding.logoIV.setVisibility(View.VISIBLE);
+
             if (currentMode == CurrentMode.booking) {
                 LatLng midLatLng = mMap.getCameraPosition().target;
 
@@ -671,6 +683,8 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
         mBinding.secondDropOffLL.setVisibility(View.GONE);
 
+        mBinding.locationETSeparator.setVisibility(View.GONE);
+
         isSecondDropOffEnabled = false;
 
         if (currentSelection == CurrentSelection.secondDropOff) {
@@ -685,6 +699,7 @@ public class Home extends BaseNavDrawer implements OnMapReadyCallback {
 
         isSecondDropOffEnabled = true;
 
+        mBinding.locationETSeparator.setVisibility(View.VISIBLE);
         mBinding.secondDropOffLL.setVisibility(View.VISIBLE);
 
     }
