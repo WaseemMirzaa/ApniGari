@@ -54,11 +54,14 @@ dependencies {
     //directions
     implementation 'com.google.maps.android:android-maps-utils:2.3.0'
 
+    ///rounded imageview
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
     //retro
-    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.7'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.4.1'
 
     //places sdk

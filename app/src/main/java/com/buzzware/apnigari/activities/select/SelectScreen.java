@@ -1,5 +1,6 @@
-package com.buzzware.apnigari.activities;
+package com.buzzware.apnigari.activities.select;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,7 +15,6 @@ public class SelectScreen extends BaseActivity {
 
     ActivitySelectTypeBinding binding;
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -25,6 +25,12 @@ public class SelectScreen extends BaseActivity {
         setContentView(binding.getRoot());
 
         setListeners();
+
+    }
+
+    public static void start(Context c){
+
+        c.startActivity(new Intent(c, SelectScreen.class));
 
     }
 

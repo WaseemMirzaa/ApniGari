@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_15sdp">
+
+    <include
+        android:id="@+id/myMessageLay"
+        layout="@layout/message_item_right"/>
+
+    <include
+        android:id="@+id/othersMessageLay"
+        layout="@layout/message_item_left"/>
+</RelativeLayout>

@@ -6,10 +6,10 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.buzzware.apnigari.activities.select.SelectScreen;
 import com.buzzware.apnigari.activities.base.BaseActivity;
 import com.buzzware.apnigari.activities.auth.vm.AuthViewModel;
 import com.buzzware.apnigari.activities.auth.vm.mo.User;
-import com.buzzware.apnigari.activities.home.Home;
 import com.buzzware.apnigari.databinding.ActivitySignUpBinding;
 import com.buzzware.apnigari.generic.GenericModelLiveData;
 
@@ -155,7 +155,7 @@ public class SignUp extends BaseActivity {
 
     private void onAuthSucceeded() {
 
-        Home.startActivity(SignUp.this);
+        SelectScreen.start(SignUp.this);
 
     }
 

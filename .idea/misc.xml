@@ -12,6 +12,10 @@
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/curved_gray_custom.xml" value="0.1" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/curved_purple.xml" value="0.218" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/drawable_top_left_curved.xml" value="0.218" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/rounded_border_blck.xml" value="0.1645" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/rounded_corner_button_blue_left.xml" value="0.1645" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/rounded_corner_button_dark_blue.xml" value="0.1645" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/rounded_corner_button_light_blue.xml" value="0.1645" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/rounded_corner_white.xml" value="0.2185" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/drawable/shape_rounded_rectangle.xml" value="0.218" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout-v26/item_ride.xml" value="0.23385416666666667" />
@@ -20,7 +24,7 @@
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_bookings_list.xml" value="0.23385416666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_chat_list.xml" value="0.165" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_customer_requests.xml" value="0.21145833333333333" />
-        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_home.xml" value="0.24947916666666667" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_home.xml" value="0.375" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_home_2.xml" value="0.23385416666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_login.xml" value="0.24947916666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
@@ -40,6 +44,7 @@
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/dialog_rating.xml" value="0.29586029052734375" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/dialog_search_location.xml" value="0.24947916666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/drawer_menu.xml" value="0.27810211181640626" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/fragment_expandable_places_list.xml" value="0.24947916666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_back_app_bar.xml" value="0.335" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_back_app_bar_white.xml" value="0.23385416666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_car_selection_view.xml" value="0.24947916666666667" />
@@ -55,6 +60,11 @@
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/item_ride.xml" value="0.375" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/item_search_place.xml" value="0.24947916666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/item_wallet.xml" value="0.375" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/message_item_left.xml" value="0.24947916666666667" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/message_item_right.xml" value="0.24947916666666667" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/messages_item_lay.xml" value="0.24947916666666667" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/my_message_item_lay.xml" value="0.24947916666666667" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/other_message_item_lay.xml" value="0.24947916666666667" />
       </map>
     </option>
   </component>

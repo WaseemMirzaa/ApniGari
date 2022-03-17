@@ -8,9 +8,9 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.buzzware.apnigari.activities.select.SelectScreen;
 import com.buzzware.apnigari.activities.base.BaseActivity;
 import com.buzzware.apnigari.activities.auth.vm.AuthViewModel;
-import com.buzzware.apnigari.activities.home.Home;
 import com.buzzware.apnigari.databinding.ActivityLoginBinding;
 import com.buzzware.apnigari.generic.GenericModelLiveData;
 import com.buzzware.apnigari.utils.AlertUtils;
@@ -95,7 +95,7 @@ public class Login extends BaseActivity {
 
                 hideLoader();
 
-                Home.startActivity(Login.this);
+                SelectScreen.start(Login.this);
 
                 break;
         }

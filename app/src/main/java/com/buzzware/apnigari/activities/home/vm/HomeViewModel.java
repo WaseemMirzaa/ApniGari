@@ -1,6 +1,7 @@
 package com.buzzware.apnigari.activities.home.vm;
 
 import static com.buzzware.apnigari.activities.base.BaseActivity.getUserId;
+import static com.buzzware.apnigari.retrofit.Controller.Base_Url;
 
 import android.util.Log;
 
@@ -10,8 +11,12 @@ import androidx.lifecycle.ViewModel;
 
 import com.buzzware.apnigari.Firebase.FirebaseInstances;
 import com.buzzware.apnigari.activities.auth.vm.mo.User;
+import com.buzzware.apnigari.activities.home.dialog.bottomSheet.mo.geoCode.ReverseGeoCode;
+import com.buzzware.apnigari.activities.home.dialog.bottomSheet.mo.geoCode.ReverseGeoCodeResponse;
 import com.buzzware.apnigari.commonModels.ride.RideModel;
+import com.buzzware.apnigari.commonModels.ride.SearchedPlaceModel;
 import com.buzzware.apnigari.generic.GenericModelLiveData;
+import com.buzzware.apnigari.retrofit.Controller;
 import com.buzzware.apnigari.utils.AppConstants;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,14 +25,20 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.gson.Gson;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeViewModel extends ViewModel {
 
-    private MutableLiveData<GenericModelLiveData> data, activeRideData;
+    private MutableLiveData<GenericModelLiveData> data, activeRideData, searchPlaceModelData;
 
     public LiveData<GenericModelLiveData> getAuthLiveData() {
 
@@ -38,6 +49,17 @@ public class HomeViewModel extends ViewModel {
         }
 
         return data;
+    }
+
+    public LiveData<GenericModelLiveData> getSearchPlaceModelData() {
+
+        if (searchPlaceModelData == null) {
+
+            searchPlaceModelData = new MutableLiveData<>();
+
+        }
+
+        return searchPlaceModelData;
     }
 
     public LiveData<GenericModelLiveData> getActiveRideLiveData() {
@@ -201,6 +223,68 @@ public class HomeViewModel extends ViewModel {
         FirebaseFirestore.getInstance().collection("Users")
                 .document(getUserId())
                 .update(userData);
+    }
+
+    Call<String> reverseCall;
+
+    public void reverseGeoCode(double lat, double lng){
+
+        String url = "/maps/api/geocode/json?latlng=" + lat + "," + lng + "&key=" + AppConstants.GOOGLE_PLACES_API_KEY;
+
+        if (reverseCall != null) {
+
+            reverseCall.cancel();
+
+            reverseCall = null;
+        }
+
+        reverseCall = Controller.getApi(Base_Url).getPlaces(url, "asdasd");
+
+        reverseCall.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                reverseCall = null;
+
+                Gson gson = new Gson();
+
+                if (response.body() != null && response.isSuccessful()) {
+
+                    ReverseGeoCodeResponse reverseGeoCodeResponse = gson.fromJson(response.body(), ReverseGeoCodeResponse.class);
+
+                    setLocationDetails(reverseGeoCodeResponse);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
+                reverseCall = null;
+
+            }
+        });
+    }
+
+    private void setLocationDetails(ReverseGeoCodeResponse response) {
+
+        SearchedPlaceModel searchedPlaceModel = new SearchedPlaceModel();
+
+        List<ReverseGeoCode> reverseGeoCodeList = response.results;
+
+        if (reverseGeoCodeList == null || reverseGeoCodeList.size() == 0)
+
+            return;
+
+
+
+        searchedPlaceModel.address = reverseGeoCodeList.get(0).formatted_address;
+        searchedPlaceModel.lat = reverseGeoCodeList.get(0).geometry.location.lat;
+        searchedPlaceModel.lng = reverseGeoCodeList.get(0).geometry.location.lng;
+        searchedPlaceModel.status = "0";
+
+        searchPlaceModelData.postValue(new GenericModelLiveData(searchedPlaceModel, GenericModelLiveData.Status.success, null));
+
     }
 
 }

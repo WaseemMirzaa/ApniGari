@@ -60,8 +60,6 @@ public class SearchPlaceDialog extends Dialog {
 
         setFullScreen();
 
-//        model
-
     }
 
     private void setFullScreen() {

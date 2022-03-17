@@ -129,4 +129,8 @@
     <string name="share_the_love_by_inviting_your_friends_and_family">Share the love by inviting Your friends and family</string>
     <string name="share_now">Share Now</string>
     <string name="menu">Menu</string>
+    <string name="_9_00">9:00</string>
+    <string name="lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s_standard">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard</string>
+    <string name="lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s_standard_dummy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy.</string>
+    <string name="continue_text">Continue</string>
 </resources>
