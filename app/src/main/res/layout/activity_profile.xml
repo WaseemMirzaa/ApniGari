@@ -45,15 +45,34 @@
         app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/amountTV"
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/userIV"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_90sdp"
         android:layout_marginTop="@dimen/_55sdp"
-        android:src="@drawable/edit_ii"
+        android:elevation="@dimen/_5sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_thumbnail_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        app:riv_border_color="@color/purple_500"
+        app:riv_border_width="@dimen/_1sdp"
+        app:riv_corner_radius="@dimen/_50sdp" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/editIV"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:background="@drawable/rounded_corner_white"
+        android:elevation="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:layout_constraintBottom_toBottomOf="@id/userIV"
+        app:layout_constraintEnd_toEndOf="@id/userIV"
+        app:layout_constraintStart_toStartOf="@id/userIV"
+        app:layout_constraintTop_toTopOf="@id/userIV" />
 
 
     <LinearLayout
@@ -80,8 +99,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/drinkAndVibeTitleTV"
+            <EditText
+                android:id="@+id/nameTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -111,8 +130,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/notificationTitleTV"
+            <EditText
+                android:id="@+id/phoneTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -143,7 +162,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/logoutTitleTV"
+                android:id="@+id/emailTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -174,10 +193,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/passwordTitleTV"
+                android:id="@+id/passwordTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
+                android:inputType="textPassword"
                 android:text="lichtagilee"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp"
@@ -187,14 +207,15 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
-            android:layout_marginTop="@dimen/_25sdp"
             android:id="@+id/confirmBTN"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_25sdp"
             android:layout_marginEnd="@dimen/_30sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:background="@drawable/curved_light_blue"

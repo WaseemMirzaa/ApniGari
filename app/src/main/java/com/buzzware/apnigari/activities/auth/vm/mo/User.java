@@ -31,6 +31,8 @@ public class User {
 
     public double lng;
 
+    public double balance=0.0;
+
     public String userRole = "user";
 
     public String zipcode;

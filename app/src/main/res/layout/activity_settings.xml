@@ -17,56 +17,63 @@
         android:id="@+id/includeAppBar"
         layout="@layout/include_menu_app_bar" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/amountTV"
-        android:layout_width="@dimen/_90sdp"
-        android:layout_height="@dimen/_90sdp"
-        android:src="@drawable/profile_image"
-        android:layout_marginTop="@dimen/_15sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/includeAppBar" />
-
-    <TextView
-        android:id="@+id/nameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/noto_medium"
-        android:text="Alex Smith"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_14ssp"
-        app:layout_constraintBottom_toBottomOf="@+id/amountTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountTV" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginBottom="@dimen/_35sdp"
         app:layout_constraintBottom_toBottomOf="@id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/nameTV">
-        <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_11sdp"
-            android:src="@drawable/balance_ii"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeAppBar">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/userIV"
+            app:riv_corner_radius="@dimen/_50sdp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:src="@drawable/user_thumbnail_image"
+            app:riv_border_width="@dimen/_1sdp"
+            app:riv_border_color="@color/white"
+            android:elevation="@dimen/_5sdp"
+            android:scaleType="centerCrop" />
 
         <TextView
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:id="@+id/amountTV2"
+            android:includeFontPadding="false"
+            android:id="@+id/nameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_medium"
-            android:text="@string/balance"
+            android:text="Alex Smith"
+            android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_14ssp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_11sdp"
+                android:src="@drawable/balance_ii"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:includeFontPadding="false"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:id="@+id/balanceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_medium"
+                android:text="@string/balance"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
     </LinearLayout>
 
 
@@ -145,11 +152,12 @@
                 app:layout_constraintTop_toTopOf="@id/notificationIconIV" />
 
             <Switch
+                android:id="@+id/notificationSW"
                 android:layout_width="@dimen/_45sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/right_arrow"
                 android:buttonTint="@color/blue"
-                android:checked="true"
+                android:checked="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -188,7 +196,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
