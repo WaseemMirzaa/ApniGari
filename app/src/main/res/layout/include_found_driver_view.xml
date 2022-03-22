@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_310sdp"
-    android:padding="@dimen/_15sdp"
-    android:visibility="gone"
+    android:layout_height="@dimen/_230sdp"
     android:background="@drawable/curved_gray_2x">
 
     <TextView
         android:id="@+id/nameTV1"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -19,7 +18,7 @@
         android:text="@string/we_found_you_a_driver"
         android:textAllCaps="true"
         android:textColor="@color/black"
-        android:textSize="@dimen/_13ssp"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +27,6 @@
         android:id="@+id/nameTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
         android:ellipsize="end"
         android:fontFamily="@font/noto_black"
         android:gravity="center"
@@ -36,7 +34,7 @@
         android:text="@string/name_placeholder"
         android:textAllCaps="true"
         android:textColor="@color/black"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/picIV" />
@@ -51,7 +49,7 @@
         android:maxLines="1"
         android:text="@string/picking_in_time_placeholder"
         android:textColor="@color/purple_500"
-        android:textSize="@dimen/_9ssp"
+        android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTV1" />
@@ -59,6 +57,7 @@
     <TextView
         android:id="@+id/timeTV2"
         android:layout_width="0dp"
+        android:visibility="gone"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:fontFamily="@font/noto_bold"
@@ -122,8 +121,8 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/picIV"
-        android:layout_width="@dimen/_70sdp"
-        android:layout_height="@dimen/_70sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:src="@drawable/pic_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,9 +153,9 @@
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/_40sdp"
-        android:scaleX="0.35"
-        android:scaleY="0.35"
+        android:layout_height="@dimen/_30sdp"
+        android:scaleX="0.3"
+        android:scaleY="0.3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTV" />

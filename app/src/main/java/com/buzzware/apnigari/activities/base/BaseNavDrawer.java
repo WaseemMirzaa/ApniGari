@@ -102,9 +102,9 @@ public class BaseNavDrawer extends BaseActivity implements View.OnClickListener 
 
             case error:
 
-                hideLoader();
-
-                showErrorAlert(genericModelLiveData.errorMsg);
+//                hideLoader();
+//
+//                showErrorAlert(genericModelLiveData.errorMsg);
 
                 break;
 

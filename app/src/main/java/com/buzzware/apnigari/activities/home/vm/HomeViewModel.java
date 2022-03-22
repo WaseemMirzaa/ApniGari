@@ -142,14 +142,19 @@ public class HomeViewModel extends ViewModel {
 
             for (QueryDocumentSnapshot document : task.getResult()) {
 
-                rideModel = document.toObject(RideModel.class);
+                RideModel ride = document.toObject(RideModel.class);
+                if (!ride.status.equals(AppConstants.RideStatus.RATED)) {
 
-                rideModel.id = document.getId();
+                    rideModel = ride;
+
+                    rideModel.id = document.getId();
+                }
 
                 break;
 
             }
         }
+
 
         activeRideData.postValue(new GenericModelLiveData(rideModel, GenericModelLiveData.Status.success, null));
 
@@ -227,7 +232,7 @@ public class HomeViewModel extends ViewModel {
 
     Call<String> reverseCall;
 
-    public void reverseGeoCode(double lat, double lng){
+    public void reverseGeoCode(double lat, double lng) {
 
         String url = "/maps/api/geocode/json?latlng=" + lat + "," + lng + "&key=" + AppConstants.GOOGLE_PLACES_API_KEY;
 
@@ -275,7 +280,6 @@ public class HomeViewModel extends ViewModel {
         if (reverseGeoCodeList == null || reverseGeoCodeList.size() == 0)
 
             return;
-
 
 
         searchedPlaceModel.address = reverseGeoCodeList.get(0).formatted_address;

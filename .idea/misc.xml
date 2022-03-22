@@ -24,6 +24,7 @@
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_bookings_list.xml" value="0.23385416666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_chat_list.xml" value="0.165" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_customer_requests.xml" value="0.21145833333333333" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_distance.xml" value="0.2819794584500467" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_home.xml" value="0.375" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_home_2.xml" value="0.23385416666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/activity_login.xml" value="0.24947916666666667" />
@@ -53,6 +54,7 @@
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_menu_app_bar.xml" value="0.24947916666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_menu_app_bar_1.xml" value="0.24947916666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_ride_cancellation_view.xml" value="0.24947916666666667" />
+        <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_searching_driver_popup.xml" value="0.22135416666666666" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/include_select_vehicle.xml" value="0.24947916666666667" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/item_car_booking.xml" value="0.33971862792968754" />
         <entry key="../../../Documents/Projects/ApniGari/app/src/main/res/layout/item_chat.xml" value="0.335" />

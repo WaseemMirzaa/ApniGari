@@ -53,6 +53,10 @@ public class VehicleModel implements Parcelable {
 
     }
 
+    public String getName() {
+        return (name != null) ? name : "";
+    }
+
     protected VehicleModel(Parcel in) {
         id = in.readString();
         backInCarUrl = in.readString();

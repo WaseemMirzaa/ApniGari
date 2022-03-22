@@ -26,6 +26,7 @@ public class User {
     public String token;
 
     public ArrayList<Double> ratings;
+    public ArrayList<String> reviews;
 
     public double lat;
 

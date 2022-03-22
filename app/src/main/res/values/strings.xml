@@ -133,4 +133,9 @@
     <string name="lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s_standard">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard</string>
     <string name="lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s_standard_dummy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy.</string>
     <string name="continue_text">Continue</string>
+    <string name="play_music_read_news">Play music, read news...</string>
+    <string name="have_a_nice_trip">Have a nice trip</string>
+    <string name="searching_driver">Searching For Drivers</string>
+    <string name="estimated_fair">Estimated fair</string>
+    <string name="thank_you_for_booking_with_apnigari_we_are_searching_for_a_driver_now">Thank you for booking with ApniGari we are searching for a driver now.</string>
 </resources>

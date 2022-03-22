@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/searchPlaceContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
@@ -139,7 +139,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:contentDescription="@null"
-                        android:src="@drawable/add"
+                        android:src="@drawable/add_circle"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:tint="@color/blue" />
                 </LinearLayout>
@@ -193,7 +193,7 @@
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:contentDescription="@null"
-                        android:src="@drawable/close"
+                        android:src="@drawable/cross_circle"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:tint="@color/blue" />
 
@@ -216,7 +216,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintTop_toBottomOf="@+id/searchPlaceContainer">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -278,7 +278,7 @@
         android:id="@+id/includeFindDriverPopUp"
         layout="@layout/include_found_driver_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_310sdp"
+        android:layout_height="@dimen/_230sdp"
         android:layout_marginStart="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_5sdp"
         app:layout_constraintBottom_toBottomOf="parent" />
@@ -323,5 +323,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_menu" />
+
+    <include
+        android:id="@+id/includeSearchingForDriver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        layout="@layout/include_searching_driver_popup"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_width="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

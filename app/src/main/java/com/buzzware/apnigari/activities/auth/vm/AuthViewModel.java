@@ -1,5 +1,7 @@
 package com.buzzware.apnigari.activities.auth.vm;
 
+import static com.buzzware.apnigari.activities.base.BaseActivity.getUserId;
+
 import android.app.Activity;
 
 import androidx.lifecycle.LiveData;
@@ -158,7 +160,7 @@ public class AuthViewModel extends ViewModel {
 
     private void setUser(User user) {
 
-        FirebaseInstances.usersCollection.document()
+        FirebaseInstances.usersCollection.document(getUserId())
                 .set(user);
 
         data.postValue(new GenericModelLiveData(user, GenericModelLiveData.Status.success, null));
