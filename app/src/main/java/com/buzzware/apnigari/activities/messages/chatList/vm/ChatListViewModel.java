@@ -130,7 +130,7 @@ public class ChatListViewModel extends ViewModel {
         model.image = user.image;
         model.lastMessage = lastMessageModel.content;
         model.id = lastMessageModel.conversationId;
-        model.toID = lastMessageModel.toID;
+        model.toID = user.id;
 
         return model;
 

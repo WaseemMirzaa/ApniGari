@@ -1,18 +1,9 @@
 package com.buzzware.apnigari.activities.messages.chatList.mo;
 
 public class ConversationModel {
-    public String conversationID, id, name, image, lastMessage,toID;
+    public String conversationID, id, name, image, lastMessage,toID, fromID;
 
     public ConversationModel() {
-    }
-
-    public ConversationModel(String conversationID, String id, String name, String image, String lastMessage, String toID) {
-        this.conversationID = conversationID;
-        this.id = id;
-        this.name = name;
-        this.image = image;
-        this.lastMessage = lastMessage;
-        this.toID=toID;
     }
 
     public String getToID() {

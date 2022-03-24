@@ -3,5 +3,5 @@
     android:shape="rectangle"
     android:padding="0dp">
     <solid android:color="@color/purple_700"/>
-    <corners android:topLeftRadius="20dp"/>
-</shape>
+    <corners android:topLeftRadius="20dp"/><![CDATA[
+]]></shape>

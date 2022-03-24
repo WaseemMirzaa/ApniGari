@@ -66,11 +66,11 @@ public class Chat extends BaseActivity {
 
             if (parcelableChat.getTypeStatus().equals("false") || parcelableChat.getTypeStatus().equals("admin"))
 
-                model.getConversation(getIntent().getStringExtra("conversationID"), FirebaseInstances.adminChatCollection, parcelableChat);
+                model.getConversation(parcelableChat.getConversationID(), FirebaseInstances.adminChatCollection, parcelableChat);
 
             else if (parcelableChat.getTypeStatus().equalsIgnoreCase("false")) {
 
-                model.getConversation(getIntent().getStringExtra("conversationID"), FirebaseInstances.chatCollection, parcelableChat);
+                model.getConversation(parcelableChat.getConversationID(), FirebaseInstances.chatCollection, parcelableChat);
 
             } else {
 
@@ -120,8 +120,6 @@ public class Chat extends BaseActivity {
 
                 }
 
-                Toast.makeText(this, "Verification Email Sent", Toast.LENGTH_SHORT).show();
-
                 break;
         }
     }
@@ -169,6 +167,22 @@ public class Chat extends BaseActivity {
     private void setListener() {
 
         mBinding.include.backIV.setOnClickListener(view -> finish());
+
+        mBinding.sendIV.setOnClickListener(view -> {
+
+            if (!mBinding.sendMessageET.getText().toString().isEmpty()) {
+
+                sendMessage(mBinding.sendMessageET.getText().toString());
+
+            }
+        });
+    }
+
+    private void sendMessage(String s) {
+
+        mBinding.sendMessageET.setText("");
+
+        model.sendMessage(s, parcelableChat);
 
     }
 
@@ -256,9 +270,9 @@ public class Chat extends BaseActivity {
 
 //                hideLoader();
 
-//                List<MessageModel> messages = (List<MessageModel>) genericModelLiveData.object;
+                List<MessageModel> messages = (List<MessageModel>) genericModelLiveData.object;
 
-//                setAdapter();
+                setAdapter(messages);
 
                 break;
         }

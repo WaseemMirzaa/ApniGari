@@ -64,7 +64,7 @@
                     android:inputType="text" />
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/sendIV"
                     android:layout_width="@dimen/_35sdp"
                     android:layout_height="match_parent"
                     android:padding="@dimen/_8sdp"

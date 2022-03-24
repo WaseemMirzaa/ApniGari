@@ -1,5 +1,6 @@
 package com.buzzware.apnigari.activities.messages.chat.vm;
 
+import static com.buzzware.apnigari.Firebase.FirebaseInstances.firebaseFirestore;
 import static com.buzzware.apnigari.activities.base.BaseActivity.getUserId;
 
 import android.app.AlertDialog;
@@ -13,6 +14,8 @@ import com.buzzware.apnigari.Firebase.FirebaseInstances;
 import com.buzzware.apnigari.activities.auth.vm.mo.User;
 import com.buzzware.apnigari.activities.messages.chat.mo.MessageModel;
 import com.buzzware.apnigari.activities.messages.chat.mo.ParcelableChat;
+import com.buzzware.apnigari.activities.messages.chat.mo.SendConversationModel;
+import com.buzzware.apnigari.activities.messages.chat.mo.SendLastMessageModel;
 import com.buzzware.apnigari.activities.messages.chatList.mo.ConversationModel;
 import com.buzzware.apnigari.activities.messages.chatList.mo.LastMessageModel;
 import com.buzzware.apnigari.commonModels.ride.RideModel;
@@ -26,6 +29,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ChatViewModel extends ViewModel {
@@ -117,7 +121,7 @@ public class ChatViewModel extends ViewModel {
 
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
 
-        DocumentReference reference = firebaseFirestore.collection("Users").document(parcelableChat.getCurrentUserId());
+        DocumentReference reference = firebaseFirestore.collection("Users").document(getUserId());
 
         reference
                 .get()
@@ -328,9 +332,10 @@ public class ChatViewModel extends ViewModel {
     }
 
     ListenerRegistration eventListener;
+
     public void setListenerOnRide(ParcelableChat parcelableChat) {
 
-        FirebaseInstances.bookingsCollection.document(parcelableChat.getConversationID())
+        eventListener = FirebaseInstances.bookingsCollection.document(parcelableChat.getConversationID())
                 .addSnapshotListener((value, error) -> {
 
                     if (value != null) {
@@ -360,4 +365,69 @@ public class ChatViewModel extends ViewModel {
                     }
                 });
     }
+
+    public void sendMessage(String s, ParcelableChat parcelableChat) {
+
+        if (parcelableChat.getTypeStatus().equals("true")) {
+
+            long currentTimeStamp = System.currentTimeMillis();
+
+            SendLastMessageModel sendLastMessageModel = new SendLastMessageModel(s,
+
+                    getUserId(), String.valueOf(currentTimeStamp), parcelableChat.getSelectedUserId(), "text", false, (int) currentTimeStamp);
+
+            HashMap<String, Boolean> participents = new HashMap<>();
+
+            participents.put(getUserId(), true);
+
+            participents.put(parcelableChat.getSelectedUserId(), true);
+
+            SendConversationModel sendConversationModel = new SendConversationModel(s,
+                    getUserId(), String.valueOf(currentTimeStamp), "text", false, currentTimeStamp, parcelableChat.getSelectedUserId());
+
+            HashMap<String, Object> lasthashMap = new HashMap<>();
+
+            lasthashMap.put("lastMessage", sendLastMessageModel);
+
+            lasthashMap.put("participants", participents);
+
+//            conversationID = UUID.randomUUID().toString();
+
+            FirebaseInstances.chatCollection.document(parcelableChat.getConversationID()).collection("Conversations").document(String.valueOf(currentTimeStamp)).set(sendConversationModel);
+            FirebaseInstances.chatCollection.document(parcelableChat.getConversationID()).set(lasthashMap);
+
+            loadMessages(FirebaseInstances.chatCollection, parcelableChat.getConversationID());
+        } else {
+            SendAlreadyExist(s, parcelableChat);
+        }
+
+
+
+        checkAlreadyExists(parcelableChat);
+
+    }
+
+    public void SendAlreadyExist(String s, ParcelableChat parcelableChat) {
+
+        long currentTimeStamp = System.currentTimeMillis();
+        SendConversationModel sendConversationModel = new SendConversationModel(s,
+                getUserId(), String.valueOf(currentTimeStamp), "text", false, currentTimeStamp, parcelableChat.getSelectedUserId());
+        SendLastMessageModel sendLastMessageModel = new SendLastMessageModel(s,
+                getUserId(), String.valueOf(currentTimeStamp), parcelableChat.getSelectedUserId(), "text", false, currentTimeStamp);
+
+        if (parcelableChat.getTypeStatus().equals("admin")) {
+
+            firebaseFirestore.collection("AdminChat").document(parcelableChat.getConversationID()).collection("Conversations").document(String.valueOf(currentTimeStamp)).set(sendConversationModel);
+            firebaseFirestore.collection("AdminChat").document(parcelableChat.getConversationID()).update("lastMessage", sendLastMessageModel);
+            loadMessages(firebaseFirestore.collection("AdminChat"), parcelableChat.getConversationID());
+
+        } else {
+
+            firebaseFirestore.collection("Chat").document(parcelableChat.getConversationID()).collection("Conversations").document(String.valueOf(currentTimeStamp)).set(sendConversationModel);
+            firebaseFirestore.collection("Chat").document(parcelableChat.getConversationID()).update("lastMessage", sendLastMessageModel);
+            loadMessages(FirebaseInstances.chatCollection, parcelableChat.getConversationID());
+
+        }
+    }
+
 }
